@@ -1,5 +1,5 @@
 variable "deployment_image" {
-  default = "docker.fuchicorp.com/fuchicorp-website:latest"
+  default = "docker.tubaloughlin.com/tubaloughlin-website:latest"
 }
 variable "deployment_environment" {
   default = "dev"
@@ -10,13 +10,13 @@ variable "replicas" {
 variable "deployment_endpoint" {
   type = "map"
   default = {
-      dev  = "dev.fuchicorp"
-      qa   = "qa.fuchicorp"
-      prod = "fuchicorp"
-      test = "test.fuchicorp"
-      stage  = "stage.fuchicorp"
+      dev  = "dev.tubaloughlin"
+      qa   = "qa.tubaloughlin"
+      prod = "tubaloughlin"
+      test = "test.tubaloughlin"
+      stage  = "stage.tubaloughlin"
   }
 }
 variable "google_domain_name" {
- default = "fuchicorp.com"
+ default = "tubaloughlin.com"
   }

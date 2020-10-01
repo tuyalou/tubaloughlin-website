@@ -1,7 +1,7 @@
-module "fuchicorp_website" {
-  source  = "fuchicorp/chart/helm"
+module "tubaloughlin_website" {
+  source  = "tubaloughlin/chart/helm"
   version = "0.0.2"
-  deployment_name        = "fuchicorp-website-${var.deployment_environment}"
+  deployment_name        = "tubaloughlin-website-${var.deployment_environment}"
   deployment_environment = "${var.deployment_environment}"
   deployment_endpoint    = "${lookup(var.deployment_endpoint, "${var.deployment_environment}")}.${var.google_domain_name}"
   deployment_path        = "website"
