@@ -10,13 +10,17 @@ variable "replicas" {
 variable "deployment_endpoint" {
   type = "map"
   default = {
-      dev  = "dev.tubaloughlin"
-      qa   = "qa.tubaloughlin"
-      prod = "tubaloughlin"
-      test = "test.tubaloughlin"
-      stage  = "stage.tubaloughlin"
+      dev  = "dev"
+      qa   = "qa"
+      prod = ""
+      test = "test"
+      stage  = "stage"
   }
 }
 variable "google_domain_name" {
  default = "tubaloughlin.com"
   }
+
+output "application_endpoint" {
+  value = "${lookup(var.deployment_endpoint, "${var.deployment_environment}")}.${var.google_domain_name}"
+}
